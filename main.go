@@ -49,7 +49,7 @@ func createURL(bucketName, objectKey, credentialsFile string) (string, error) {
 	opts := &storage.SignedURLOptions{
 		GoogleAccessID: credentials.ClientEmail,
 		PrivateKey:     []byte(credentials.PrivateKey),
-		Method:         "POST",
+		Method:         "PUT",
 		Expires:        expires,
 		Headers:        []string{"x-goog-resumable:start"},
 	}
