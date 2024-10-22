@@ -28,7 +28,6 @@ Run the following to generate a token:
 
 ```
 go run main.go \
-  --project="PROJECT_NAME" \
   --bucket="BUCKET_NAME" \
   --key="object/key.mp4" \
   --credentials="credentials.json"

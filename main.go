@@ -12,15 +12,14 @@ import (
 )
 
 func main() {
-	projectID := flag.String("project", "", "Google Cloud Project ID")
 	bucketName := flag.String("bucket", "", "GCS Bucket Name")
 	objectKey := flag.String("key", "", "Object Key")
 	credentialsFile := flag.String("credentials", "", "Path to service account key JSON file")
 
 	flag.Parse()
 
-	if *projectID == "" || *bucketName == "" || *objectKey == "" || *credentialsFile == "" {
-		log.Fatal("All flags --project, --bucket, --key and --credentialsFile must be provided.")
+	if *bucketName == "" || *objectKey == "" || *credentialsFile == "" {
+		log.Fatal("All flags --bucket, --key and --credentialsFile must be provided.")
 	}
 
 	url, err := createURL(*bucketName, *objectKey, *credentialsFile)
