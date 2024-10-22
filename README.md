@@ -4,14 +4,7 @@ This script allows you to generate a pre-signed URL for a GCS object with suppor
 
 ## IAM Config
 
-Make sure you have ADC setup to impersonate a service account that has Storage Admin permissions:
-
-```shell
-gcloud auth application-default login \
-  --impersonate-service-account=SERVICE_ACCOUNT_EMAIL
-```
-
-Allow the service account to create tokens:
+Make sure you have a service account that has Storage Admin permissions. Allow the service account to create tokens:
 
 ```shell
 gcloud iam service-accounts add-iam-policy-binding SERVICE_ACCOUNT_EMAIL \
